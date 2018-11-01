@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">GridGallery</string>
+    <string name="s_settings">Settings</string>
+    <string name="s_generalImageDescr">Image from gallery</string>
+
+</resources>
