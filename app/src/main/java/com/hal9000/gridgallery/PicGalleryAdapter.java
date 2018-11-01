@@ -1,6 +1,7 @@
 package com.hal9000.gridgallery;
 
 import android.content.Context;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -14,11 +15,14 @@ import java.util.ArrayList;
 public class PicGalleryAdapter extends BaseAdapter {
     private Context context;
     private ArrayList<Integer> imageIDs;
+    private int screenWidth;
 
     public PicGalleryAdapter(Context c, ArrayList<Integer> imageIDs)
     {
         context = c;
         this.imageIDs = imageIDs;
+        DisplayMetrics metrics = context.getResources().getDisplayMetrics();
+        screenWidth = metrics.widthPixels;
     }
 
     //---returns the number of images---
@@ -41,7 +45,7 @@ public class PicGalleryAdapter extends BaseAdapter {
         ImageView imageView;
         if (convertView == null) {
             imageView = new ImageView(context);
-            imageView.setLayoutParams(new GridView.LayoutParams(500,500));
+            imageView.setLayoutParams(new GridView.LayoutParams(screenWidth/2,screenWidth/2));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(1, 5, 1, 5);
 

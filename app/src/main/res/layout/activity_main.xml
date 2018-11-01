@@ -26,9 +26,10 @@
         android:numColumns="2"
         android:verticalSpacing="10dp"
         android:horizontalSpacing="10dp"
-        android:columnWidth="90dp"
+        android:columnWidth="50dp"
         android:stretchMode="columnWidth"
-        android:gravity="center"
+
+        android:gravity="fill_horizontal"
         android:background="@color/colorBackground"/>
 
 </LinearLayout>

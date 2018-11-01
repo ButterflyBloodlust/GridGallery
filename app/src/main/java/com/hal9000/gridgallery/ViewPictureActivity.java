@@ -2,6 +2,8 @@ package com.hal9000.gridgallery;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -30,6 +32,13 @@ public class ViewPictureActivity extends AppCompatActivity {
         setContentView(R.layout.activity_view_picture);
 
         initToolbar();
+
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            ActionBar actionBar = getSupportActionBar();
+            if (actionBar != null) {
+                getSupportActionBar().hide();
+            }
+        }
 
         galleryPicture = (ImageView)findViewById(R.id.galleryImage);
 
@@ -81,6 +90,6 @@ public class ViewPictureActivity extends AppCompatActivity {
         starter.putExtra(KEY_PICTURES, imageIDs);
         starter.putExtra(KEY_REQUESTED_POS, requestedPos);
         context.startActivity(starter);
-        Log.d("ViewPictureActivity", "after start");
+        //Log.d("ViewPictureActivity", "after start");
     }
 }

@@ -58,9 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("ViewPictureActivity", "before start");
+                //Log.d("ViewPictureActivity", "before start");
                 ViewPictureActivity.start(MainActivity.this, imageIDs, position);
-
             }
         });
 
