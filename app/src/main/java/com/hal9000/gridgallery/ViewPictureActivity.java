@@ -33,13 +33,6 @@ public class ViewPictureActivity extends AppCompatActivity {
 
         initToolbar();
 
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            ActionBar actionBar = getSupportActionBar();
-            if (actionBar != null) {
-                getSupportActionBar().hide();
-            }
-        }
-
         galleryPicture = (ImageView)findViewById(R.id.galleryImage);
 
         imageIDs = (ArrayList<Integer>) getIntent().getSerializableExtra(KEY_PICTURES);
@@ -74,8 +67,10 @@ public class ViewPictureActivity extends AppCompatActivity {
     }
 
     private void initToolbar() {
-        Toolbar displayActToolbar = findViewById(R.id.simple_toolbar);
-        setSupportActionBar(displayActToolbar);
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+            Toolbar displayActToolbar = findViewById(R.id.simple_toolbar);
+            setSupportActionBar(displayActToolbar);
+        }
     }
 
     private void changePicture(int arrayPosition){
