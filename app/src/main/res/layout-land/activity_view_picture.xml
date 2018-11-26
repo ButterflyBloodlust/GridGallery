@@ -12,16 +12,15 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_above="@id/next_item_button"
+        android:layout_toLeftOf="@id/next_item_button"
+        android:layout_toRightOf="@id/previous_item_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="2dp"
-        >
+        android:layout_centerVertical="true"
+        android:layout_margin="2dp">
         <ImageView
             android:id="@+id/galleryImage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="1dip"
             android:adjustViewBounds="true"
             android:contentDescription="@string/s_generalImageDescr"
@@ -35,22 +34,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_keyboard_arrow_left_50dp"
-        android:minWidth="170dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="2dp"
+        android:minHeight="150dp"
         android:background="@drawable/imageview_border"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"/>
+        android:layout_centerVertical="true"/>
 
     <ImageButton
         android:id="@+id/next_item_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="2dp"
+        android:minHeight="150dp"
         android:src="@drawable/ic_keyboard_arrow_right_50dp"
-        android:minWidth="170dp"
         android:background="@drawable/imageview_border"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"/>
+        android:layout_centerVertical="true"/>
 
 </RelativeLayout>
     <!--android:layout_below="@+id/galleryImage"-->
